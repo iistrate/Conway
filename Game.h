@@ -25,6 +25,9 @@ private:
 	std::vector < Image* > m_Images_WORLD;
 	std::vector < Image* > m_Images_MOVING;
 
+	//vars
+	int m_ifpsCap;
+
 
 public:
 	Game();

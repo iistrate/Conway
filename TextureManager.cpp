@@ -1,6 +1,10 @@
 #include "TextureManager.h"
 
-TextureManager::TextureManager() :m_pTexture(0), m_pTextSurface(0),m_ilevelHeight(1800), m_ilevelWidth(2400), m_iscreenHeight(900), m_iscreenWidth(1200){}
+TextureManager::TextureManager() :m_pTexture(0), m_pTextSurface(0),m_ilevelHeight(1800), 
+m_ilevelWidth(2400), m_iscreenHeight(900), m_iscreenWidth(1200){}
+TextureManager::~TextureManager() {
+
+}
 
 void TextureManager::draw(SDL_Renderer* f_prenderer, std::vector < Image* > f_Images, SDL_RendererFlip f_flip) {
 	//helper vars

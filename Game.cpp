@@ -36,12 +36,17 @@ void Game::init(const char* title, int x, int y, int w, int h, int flags) {
 
 }
 void Game::fpsCap() {
-
+	//time in seconds
+	int fps = SDL_GetTicks() / 1000;
+	if (fps < 1000 / m_ifpsCap) {
+		//fps per seconds - time difference from when the loop started till the end in seconds
+		SDL_Delay((1000 / m_ifpsCap) - (fps / 1000));
+	}
 }
 void Game::quit() {
 
 }
-Game::Game(): m_brunning(false) {
+Game::Game(): m_brunning(false), m_ifpsCap(50) {
 
 }
 Game::~Game() {
