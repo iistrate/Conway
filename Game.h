@@ -1,9 +1,6 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include <iostream>
-
-#include "Globals.h"
 #include "TextureManager.h"
 #include "World.h"
 
@@ -22,8 +19,7 @@ private:
 	World* Conways;
 
 	//image sets
-	std::vector < Image* > m_Images_WORLD;
-	std::vector < Image* > m_Images_MOVING;
+	std::vector < Image* > m_Images;
 
 	//vars
 	int m_ifpsCap;

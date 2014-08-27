@@ -16,12 +16,6 @@ private:
 	SDL_Rect m_srcRect;
 	SDL_Texture* m_pTexture;
 
-	//font
-	SDL_Surface* m_pTextSurface;
-	const char *m_pcstr;
-	std::string m_scommand;
-	int m_ifontWidth;
-
 	Uint32 FPS;
 
 	//camera position

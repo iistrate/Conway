@@ -1,4 +1,5 @@
 #include "Game.h"
+#include <SDL.h>
 
 void Game::run() {
 	//init sdl
@@ -6,10 +7,25 @@ void Game::run() {
 
 	//create world
 	Conways = new World();
+	m_Images.push_back(new Image("Assets/alivecell.png", 10, 10, 5, 5, 0, 0, 1, false, 1, 1, true));
 
-	while (m_brunning) {
-		void;
-	}
+	do {
+		//clear window
+		SDL_RenderClear(m_pRenderer);
+
+		//error checking
+		std::cout << SDL_GetError();
+		std::cout << IMG_GetError();
+
+		//set color bg to white
+		SDL_SetRenderDrawColor(m_pRenderer, 255, 255, 255, 255);
+
+		//draw images
+		Tmanager.draw(m_pRenderer, m_Images);
+
+		//cap fps
+		fpsCap();
+	} while (m_brunning);
 }
 void Game::init(const char* title, int x, int y, int w, int h, int flags) {
 	//starts game loop
@@ -25,6 +41,7 @@ void Game::init(const char* title, int x, int y, int w, int h, int flags) {
 		if (m_pWindow) {
 			m_pRenderer = SDL_CreateRenderer(m_pWindow, -1, SDL_RENDERER_ACCELERATED);
 			SDL_SetRenderDrawColor(m_pRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
+			IMG_Init(IMG_INIT_PNG);
 		}
 		else {
 			std::cout << "Window failed to load" << std::endl;
@@ -33,7 +50,6 @@ void Game::init(const char* title, int x, int y, int w, int h, int flags) {
 	else {
 		std::cout << "SDL failed to initialize" << std::endl;
 	}
-
 }
 void Game::fpsCap() {
 	//time in seconds
@@ -44,7 +60,8 @@ void Game::fpsCap() {
 	}
 }
 void Game::quit() {
-
+	IMG_Quit();
+	SDL_Quit();
 }
 Game::Game(): m_brunning(false), m_ifpsCap(50) {
 
