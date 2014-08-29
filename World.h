@@ -2,6 +2,8 @@
 #define WORLD_H
 
 #include <vector>
+#include <stdlib.h>
+#include <time.h>
 
 #include "GLOBALS.h"
 #include "Cell.h"
@@ -14,10 +16,11 @@ private:
 	int m_iwidth;
 
 	//holds world's images
-	std::vector < std::vector < GameObject* > > Map;
+	std::vector < Cell* > Cells;
 
 public:
 	World();
+	void update();
 	void getImages(std::vector < Image* > &f_Images);
 
 };
