@@ -26,6 +26,7 @@ void Game::init(const char* title, int x, int y, int w, int h, int flags) {
 }
 
 void Game::run() {
+	int tick = 0;
 	//init sdl
 	init("Conway", 32, 32, GLOBALS::SCREEN_WIDTH, GLOBALS::SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
 
@@ -34,36 +35,37 @@ void Game::run() {
 
 	SDL_Event e;
 	do {
-
-	Conways->getImages(m_Images);
-	Conways->update();
+		tick++;
+		std::cout << tick << std::endl;
+		Conways->getImages(m_Images);
+		Conways->update();
 	
-	//clear window
-	SDL_RenderClear(m_pRenderer);
+		//clear window
+		SDL_RenderClear(m_pRenderer);
 
-	//error checking
-	std::cout << SDL_GetError();
-	std::cout << IMG_GetError();
+		//error checking
+		std::cout << SDL_GetError();
+		std::cout << IMG_GetError();
 
-	//set color bg to white
-	SDL_SetRenderDrawColor(m_pRenderer, 255, 255, 255, 255);
+		//set color bg to white
+		SDL_SetRenderDrawColor(m_pRenderer, 255, 255, 255, 255);
 
-	//draw images
-	Tmanager.draw(m_pRenderer, m_Images);
+		//draw images
+		Tmanager.draw(m_pRenderer, m_Images);
 
-	SDL_RenderPresent(m_pRenderer);
-	//
-	if (SDL_PollEvent(&e)) {
-		if (e.type == SDL_KEYDOWN) {
-			switch (e.key.keysym.sym) {
-			case SDLK_ESCAPE: quit();
+		SDL_RenderPresent(m_pRenderer);
+		//
+		if (SDL_PollEvent(&e)) {
+			if (e.type == SDL_KEYDOWN) {
+				switch (e.key.keysym.sym) {
+				case SDLK_ESCAPE: quit();
+				}
 			}
 		}
-	}
-	//
+		//
 
-	//cap fps
-	fpsCap();
+		//cap fps
+		fpsCap();
 	} while (m_brunning);
 }
 void Game::fpsCap() {

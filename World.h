@@ -22,7 +22,7 @@ public:
 	World();
 	void update();
 	void getImages(std::vector < Image* > &f_Images);
-
+	Cell* getCellbyPos(int x, int y);
 };
 
 #endif
