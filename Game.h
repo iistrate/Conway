@@ -19,7 +19,7 @@ private:
 	World* Conways;
 
 	//image sets
-	std::vector < Image* > m_Images;
+	std::list < Image* > m_Images;
 
 	//vars
 	int m_ifpsCap;

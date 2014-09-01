@@ -1,17 +1,8 @@
-﻿Build started 8/31/2014 7:33:55 PM.
+﻿Build started 9/1/2014 12:36:10 PM.
      1>Project "C:\Users\Ioan\Documents\Visual Studio 2013\Projects\Conway\Conway\Conway.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Game.cpp World.cpp main.cpp
-         World.cpp
-     1>c:\users\ioan\documents\visual studio 2013\projects\conway\conway\world.cpp(35): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\ioan\documents\visual studio 2013\projects\conway\conway\world.cpp(105): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\ioan\documents\visual studio 2013\projects\conway\conway\world.cpp(113): warning C4018: '<' : signed/unsigned mismatch
-         Generating Code...
-     1>c:\users\ioan\documents\visual studio 2013\projects\conway\conway\world.cpp(118): warning C4715: 'World::getCellbyPos' : not all control paths return a value
-         Compiling...
-         main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Game.cpp
          Game.cpp
-         Generating Code...
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Ioan\Documents\Visual Studio 2013\Projects\Conway\Debug\Conway.exe" /INCREMENTAL /NOLOGO SDL2.lib SDL2main.lib SDL2_image.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Ioan\Documents\Visual Studio 2013\Projects\Conway\Debug\Conway.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Ioan\Documents\Visual Studio 2013\Projects\Conway\Debug\Conway.lib" /MACHINE:X86 Debug\Cell.obj
          Debug\Game.obj
@@ -20,9 +11,10 @@
          Debug\main.obj
          Debug\TextureManager.obj
          Debug\World.obj
+     1>MSVCRTD.lib(cinitexe.obj) : warning LNK4098: defaultlib 'msvcrt.lib' conflicts with use of other libs; use /NODEFAULTLIB:library
          Conway.vcxproj -> C:\Users\Ioan\Documents\Visual Studio 2013\Projects\Conway\Debug\Conway.exe
      1>Done Building Project "C:\Users\Ioan\Documents\Visual Studio 2013\Projects\Conway\Conway\Conway.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.62
+Time Elapsed 00:00:01.37

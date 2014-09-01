@@ -8,7 +8,7 @@ private:
 	bool m_blife;
 public:
 	Cell();
-	Cell(bool, int, int);
+	Cell(bool alive, int y, int x);
 
 	bool isAlive();
 	void setLife(bool);

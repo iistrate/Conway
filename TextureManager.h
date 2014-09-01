@@ -4,7 +4,7 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <string>
-#include <vector>
+#include <list>
 #include <iostream>
 
 
@@ -36,7 +36,7 @@ public:
 	~TextureManager();
 
 
-	void draw(SDL_Renderer* f_prenderer, std::vector < Image* > f_Images, SDL_RendererFlip flip = SDL_FLIP_NONE);
+	void draw(SDL_Renderer* f_prenderer, std::list < Image* > f_Images, SDL_RendererFlip flip = SDL_FLIP_NONE);
 
 	void setCamX(int);
 	void setCamY(int);

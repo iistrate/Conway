@@ -38,7 +38,6 @@ void Game::run() {
 		tick++;
 		std::cout << tick << std::endl;
 		Conways->getImages(m_Images);
-		Conways->update();
 	
 		//clear window
 		SDL_RenderClear(m_pRenderer);
@@ -66,6 +65,7 @@ void Game::run() {
 
 		//cap fps
 		fpsCap();
+		Conways->update();
 	} while (m_brunning);
 }
 void Game::fpsCap() {

@@ -6,7 +6,7 @@ TextureManager::~TextureManager() {
 
 }
 
-void TextureManager::draw(SDL_Renderer* f_prenderer, std::vector < Image* > f_Images, SDL_RendererFlip f_flip) {
+void TextureManager::draw(SDL_Renderer* f_prenderer, std::list < Image* > f_Images, SDL_RendererFlip f_flip) {
 	//helper vars
 	int cameraModifierX = (-1)* m_icamX;
 	int cameraModifierY = (-1)* m_icamY;
@@ -16,15 +16,12 @@ void TextureManager::draw(SDL_Renderer* f_prenderer, std::vector < Image* > f_Im
 	int height = 0;
 	const char* fname = "";
 
-	for (std::vector < Image >::size_type i = 0; i != f_Images.size(); i++) {
-		//speed up loading; only load image sprites once per image set; counter says 3 (which is good)
-		if (fname != f_Images[i]->getFileName()) {
-			fname = f_Images[i]->getFileName();
-			m_pTexture = IMG_LoadTexture(f_prenderer, fname);
-		}
+	for (std::list < Image* >::iterator it = f_Images.begin(); it != f_Images.end(); ++it) {
+		fname = (*it)->getFileName();
+		m_pTexture = IMG_LoadTexture(f_prenderer, fname);
 		//image vars
-		width = f_Images[i]->getWidth();
-		height = f_Images[i]->getHeight();
+		width = (*it)->getWidth();
+		height = (*it)->getHeight();
 
 		//width and height of image
 		m_srcRect.w = m_dstRect.w = width;
@@ -34,11 +31,11 @@ void TextureManager::draw(SDL_Renderer* f_prenderer, std::vector < Image* > f_Im
 		m_srcRect.y = 0;
 
 
-		origX = f_Images[i]->getX();
-		origY = f_Images[i]->getY();
+		origX = (*it)->getX();
+		origY = (*it)->getY();
 		//where to draw at
-		m_dstRect.x = f_Images[i]->isStatic() ? origX : origX + cameraModifierX;
-		m_dstRect.y = f_Images[i]->isStatic() ? origY : origY + cameraModifierY;
+		m_dstRect.x = (*it)->isStatic() ? origX : origX + cameraModifierX;
+		m_dstRect.y = (*it)->isStatic() ? origY : origY + cameraModifierY;
 
 		//magic
 		SDL_RenderCopyEx(f_prenderer, m_pTexture, &m_srcRect, &m_dstRect, NULL, NULL, f_flip);

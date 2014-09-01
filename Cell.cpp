@@ -5,9 +5,9 @@ Cell::Cell(): m_blife(false) {
 	int width = 10;
 	int height = 10;
 
-	m_Image = new Image("assets/alivecell.png", 0, 0, width, height, 0, 0, 1, false, 1, 1, true);
+	m_Image = new Image("assets/deadcell.png", 0, 0, width, height, 0, 0, 1, false, 1, 1, true);
 }
-Cell::Cell(bool alive, int x, int y) {
+Cell::Cell(bool alive, int y, int x) {
 	int width = 10;
 	int height = 10;
 

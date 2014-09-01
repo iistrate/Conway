@@ -1,7 +1,7 @@
 #ifndef WORLD_H
 #define WORLD_H
 
-#include <vector>
+#include <list>
 #include <stdlib.h>
 #include <time.h>
 
@@ -16,13 +16,13 @@ private:
 	int m_iwidth;
 
 	//holds world's images
-	std::vector < Cell* > Cells;
+	std::list < Cell* > Cells;
 
 public:
 	World();
 	void update();
-	void getImages(std::vector < Image* > &f_Images);
-	Cell* getCellbyPos(int x, int y);
+	void getImages(std::list < Image* > &f_Images);
+	Cell* getCellbyPos(int y, int x);
 };
 
 #endif
